@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'screens/ads/ads.dart';
-import 'screens/home/home_page.dart';
-import 'screens/profile/profile_page.dart';
-import 'screens/selfie/selfie_of_week.dart';
-import 'screens/challenge/challenges.dart';
-import 'screens/search.dart';
-import 'screens/profile/profile_menu.dart';
+import 'screens/main_activity/ads_page.dart';
+import 'screens/main_activity/home_page.dart';
+import 'screens/main_activity/profile_page.dart';
+import 'screens/main_activity/selfie_of_the_week_page.dart';
+import 'screens/main_activity/whats_on_page.dart';
+import 'screens/search/search.dart';
+import 'screens/profile_menus/profile_menu.dart';
 import 'screens/inbox/notifications.dart';
 
 
@@ -34,10 +34,10 @@ class Home extends StatelessWidget {
           body: TabBarView(
             children: [
               HomePage(),
-              SelfiePage(),
-              ChallengesPage(),
+              SelfieOfTheWeekPage(),
+              WhatsOnPage(),
               AdsPage(),
-              Notifications()//ProfilePage(),
+              ProfilePage()
 
             ],
           ),

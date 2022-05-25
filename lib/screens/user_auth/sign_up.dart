@@ -32,11 +32,11 @@ class _SignUpState extends State<SignUp> {
         height: double.infinity,
         decoration: BoxDecoration(
           image:  DecorationImage(
-            image: AssetImage('assets/login.jpg'),fit: BoxFit.cover
+            image: AssetImage('assets/login.png'),fit: BoxFit.cover
           ),
         ),
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 7),
+          padding: EdgeInsets.symmetric(horizontal: 7),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -63,30 +63,23 @@ class _SignUpState extends State<SignUp> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                padding: EdgeInsets.all(8),
-                                height: 40,
-                                width: 250,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20)
+                              Expanded(
+                                  child:Container(
+                                      padding: EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(20)
 
-                                ),
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.flag, color: Colors.grey,),
-                                    SizedBox(width: 10,),
-                                    Text(c_string)
-                                  ],
-                                ),
-                              ),
+                                      ),
+                                      child: Text(c_string)
+                                  ), ),
                               IconButton(onPressed: (){
                                 showCountryPicker(
                                   context: context,
-                                  showPhoneCode: true, // optional. Shows phone code before the country name.
+                                  showPhoneCode: false, // optional. Shows phone code before the country name.
                                   onSelect: (Country country) {
                                     setState(() {
-                                      c_string = '+${country.phoneCode} ${country.name}';
+                                      c_string = '${country.flagEmoji} ${country.name}';
                                     });
                                     print('Select country: ${country.e164Key}');
                                   },

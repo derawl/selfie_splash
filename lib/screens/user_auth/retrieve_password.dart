@@ -22,11 +22,11 @@ class _RetrievePasswordPageState extends State<RetrievePasswordPage> {
         height: double.infinity,
         decoration: BoxDecoration(
           image:  DecorationImage(
-              image: AssetImage('assets/login.jpg'),fit: BoxFit.cover
+              image: AssetImage('assets/login.png'),fit: BoxFit.cover
           ),
         ),
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 7),
+          padding: EdgeInsets.symmetric(horizontal: 7),
           child: SingleChildScrollView(
             child: Column(
               children: [
