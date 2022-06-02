@@ -7,6 +7,7 @@ import 'screens/main_activity/whats_on_page.dart';
 import 'screens/search/search.dart';
 import 'screens/profile_menus/profile_menu.dart';
 import 'screens/inbox/notifications.dart';
+import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
 
 class Home extends StatelessWidget {
@@ -18,18 +19,31 @@ class Home extends StatelessWidget {
       length: 5,
       child: SafeArea(
         child: Scaffold(
-          bottomNavigationBar: TabBar(
-            labelColor: Colors.white,
-            padding: EdgeInsets.all(8),
-            indicatorColor: Colors.white,
-            tabs: [
-              Tab(icon: Image.asset('assets/home.png', width: 35, height: 35,),),
-              Tab(icon: Image.asset('assets/sotw.png', width: 35, height: 35,),),
-              Tab(icon: Image.asset('assets/challenge.png', width: 35, height: 35,),),
-              Tab(icon: Image.asset('assets/search.png', width: 35, height: 35,),),
-              Tab(icon: Image.asset('assets/profile.png', width: 35, height: 35,),),
+          bottomNavigationBar: Container(
+            decoration: BoxDecoration(
+              border: Border(top: BorderSide(color: Colors.blue, width: 1))
+            ),
+            child: TabBar(
+              labelColor: Colors.blue,
+              padding: EdgeInsets.all(5),
+              unselectedLabelColor: Colors.grey,
+              indicator: MaterialIndicator(
+                height: 3,
+                color: Colors.blue,
+                topLeftRadius: 8,
+                topRightRadius: 8,
+                horizontalPadding: 20,
+                tabPosition: TabPosition.bottom,
+              ),
+              tabs: [
+                Tab(icon: Icon(Icons.home, size: 30),),
+                Tab(icon: Icon(Icons.favorite, size: 30),),
+                Tab(icon: Icon(Icons.star, size: 30),),
+                Tab(icon: Icon(Icons.search, size: 30),),
+                Tab(icon: Icon(Icons.person, size: 30),),
 
-            ],
+              ],
+            ),
           ),
           body: TabBarView(
             children: [

@@ -18,7 +18,7 @@ class Inbox extends StatelessWidget {
         actions: [
           IconButton(onPressed: (){}, icon: Icon(Icons.search, size: 30, color: Colors.black,))
         ],
-        elevation: 0.2,
+        elevation: 0.5,
         titleSpacing: 0,
         title: Text('My Inbox', style: kOnboardTextBig.copyWith(color: Colors.black, fontSize: 22, fontWeight: FontWeight.w600),),
         toolbarHeight: 70,
@@ -32,8 +32,14 @@ class Inbox extends StatelessWidget {
               child:Column(
                 children: [
                   SizedBox(height: 15,),
-                  Text('Favorites', style: kOnboardTextSmall.copyWith(color: Colors.grey.shade600,
-                      fontWeight: FontWeight.bold),),
+                  Row(mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Favorites', style: kOnboardTextSmall.copyWith(color: Colors.grey.shade600,
+                            fontWeight: FontWeight.bold),),
+                        SizedBox(width: 3,),
+                        Icon(Icons.favorite, color: Colors.red, size: 30,),
+                      ]
+                  ),
                   SizedBox(height: 15,),
                   Container(
                       width: double.infinity,
@@ -45,15 +51,20 @@ class Inbox extends StatelessWidget {
                             UserProfiles(),
                             UserProfiles(),
                             UserProfiles(),
-
+                            UserProfiles(),
+                            UserProfiles(),
+                            UserProfiles(),
+                            UserProfiles(),
                           ],
                         ),
                     ),
                 ],
               ),
             ),
-
-
+            SizedBox(height: 5,),
+            Container(margin: EdgeInsets.symmetric(horizontal: 10),
+              color: Colors.grey, width: double.infinity,height: 1,),
+            SizedBox(height: 10,),
             //Messages
             Container(
                   height: MediaQuery.of(context).size.height*1.5,
@@ -167,16 +178,16 @@ class UserProfiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 140,
+      width: 120,
       decoration: BoxDecoration(
           border: Border.all(
-            color: Colors.blueGrey,
+            color: Colors.blue,
             width: 1.5
           ),
           borderRadius: BorderRadius.all(Radius.circular(15))
       ),
       padding: EdgeInsets.all(5),
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: EdgeInsets.symmetric(horizontal: 5),
       child: Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
