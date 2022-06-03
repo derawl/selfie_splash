@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'screens/main_activity/ads_page.dart';
 import 'screens/main_activity/home_page.dart';
@@ -17,33 +18,35 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 5,
-      child: SafeArea(
+      child: SafeArea(bottom: false,
         child: Scaffold(
           bottomNavigationBar: Container(
+            padding: EdgeInsets.only(bottom: 5),
             decoration: BoxDecoration(
-              border: Border(top: BorderSide(color: Colors.blue, width: 1))
+              color: Colors.white,
+              border: Border(top: BorderSide( color: Colors.grey, width: 0.5)),
             ),
             child: TabBar(
-              labelColor: Colors.blue,
-              padding: EdgeInsets.all(5),
-              unselectedLabelColor: Colors.grey,
-              indicator: MaterialIndicator(
-                height: 3,
-                color: Colors.blue,
-                topLeftRadius: 8,
-                topRightRadius: 8,
-                horizontalPadding: 20,
-                tabPosition: TabPosition.bottom,
-              ),
-              tabs: [
-                Tab(icon: Icon(Icons.home, size: 30),),
-                Tab(icon: Icon(Icons.favorite, size: 30),),
-                Tab(icon: Icon(Icons.star, size: 30),),
-                Tab(icon: Icon(Icons.search, size: 30),),
-                Tab(icon: Icon(Icons.person, size: 30),),
+                labelColor: Colors.blue,
+                padding: EdgeInsets.all(3),
+                unselectedLabelColor: Colors.grey,
+                indicatorSize: TabBarIndicatorSize.label,
+                indicator: MaterialIndicator(
+                  height: 3,
+                  color: Colors.blue,
+                  topLeftRadius: 25,
+                  topRightRadius: 25,
+                  tabPosition: TabPosition.bottom,
+                ),
+                tabs: [
+                  Tab(icon: Icon(Icons.home, size: 30),),
+                  Tab(icon: Icon(Icons.favorite, size: 30),),
+                  Tab(icon: Icon(Icons.star, size: 30),),
+                  Tab(icon: Icon(Icons.search, size: 30),),
+                  Tab(icon: Icon(Icons.person, size: 30),),
 
-              ],
-            ),
+                ],
+              ),
           ),
           body: TabBarView(
             children: [
