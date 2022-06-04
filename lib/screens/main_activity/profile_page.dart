@@ -35,6 +35,7 @@ class ProfilePage extends StatelessWidget {
         toolbarHeight: 70,
       ),
       body: SingleChildScrollView(
+        padding: EdgeInsets.only(bottom: 60),
         child: Column(
           children: [
             Stack(
