@@ -27,20 +27,21 @@ class Inbox extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: size.height * 0.24,
+              height: size.height * 0.23,
 
               child:Column(
                 children: [
                   SizedBox(height: 15,),
                   Row(mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Favorites', style: kOnboardTextSmall.copyWith(color: Colors.grey.shade600,
-                            fontWeight: FontWeight.bold),),
+                        SizedBox(width: 8,),
+                        Text('Favourites', style: TextStyle(color: Colors.grey.shade600,
+                            fontWeight: FontWeight.bold, fontSize: 16),),
                         SizedBox(width: 3,),
-                        Icon(Icons.favorite, color: Colors.red, size: 30,),
+                        Icon(Icons.favorite, color: Colors.red,),
                       ]
                   ),
-                  SizedBox(height: 15,),
+                  SizedBox(height: 12,),
                   Container(
                       width: double.infinity,
                       height: size.height * 0.2 * 0.7,
@@ -61,8 +62,7 @@ class Inbox extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 5,),
-            Container(margin: EdgeInsets.symmetric(horizontal: 10),
+            Container(margin: EdgeInsets.symmetric(horizontal: 40),
               color: Colors.grey, width: double.infinity,height: 1,),
             SizedBox(height: 10,),
             //Messages
@@ -110,7 +110,7 @@ class ContainerCard extends StatelessWidget {
             BoxShadow(
                 offset: Offset(2, 2),
                 blurRadius: 10,
-                spreadRadius: 4,
+                spreadRadius: 3,
                 color: Colors.grey.withOpacity(0.3))
           ]),
     );
@@ -178,7 +178,7 @@ class UserProfiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120,
+      width: 110,
       decoration: BoxDecoration(
           border: Border.all(
             color: Colors.blue,
