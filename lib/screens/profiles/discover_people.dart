@@ -91,10 +91,11 @@ class DiscoverPeople extends StatelessWidget {
               //Messages
 
                   Container(
-                    height: MediaQuery.of(context).size.height*1.5,
+                    padding: EdgeInsets.only(bottom: 15),
                     margin: EdgeInsets.only(top: 5),
                     child: ListView(
                       physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
                       children: [
                         DiscoverItem(),
                         DiscoverItem(),

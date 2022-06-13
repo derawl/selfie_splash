@@ -27,24 +27,23 @@ class Inbox extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: size.height * 0.23,
+              height: size.height * 0.24,
 
               child:Column(
                 children: [
                   SizedBox(height: 15,),
-                  Row(mainAxisAlignment: MainAxisAlignment.center,
+                  Row(mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        SizedBox(width: 8,),
-                        Text('Favourites', style: TextStyle(color: Colors.grey.shade600,
-                            fontWeight: FontWeight.bold, fontSize: 16),),
+                        SizedBox(width: 15,),
+                        Text('Favourites', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
                         SizedBox(width: 3,),
                         Icon(Icons.favorite, color: Colors.red,),
                       ]
                   ),
-                  SizedBox(height: 12,),
+                  SizedBox(height: 5,),
                   Container(
                       width: double.infinity,
-                      height: size.height * 0.2 * 0.7,
+                      height: size.height * 0.2 * 0.85,
                       child: ListView(
                           scrollDirection: Axis.horizontal,
                           children: [
@@ -62,13 +61,19 @@ class Inbox extends StatelessWidget {
                 ],
               ),
             ),
-            Container(margin: EdgeInsets.symmetric(horizontal: 40),
-              color: Colors.grey, width: double.infinity,height: 1,),
-            SizedBox(height: 10,),
+            SizedBox(height: 5,),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(width: 15,),
+                  Text('Chats', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
+                ]
+            ),
+            SizedBox(height: 3,),
             //Messages
             Container(
-                  height: MediaQuery.of(context).size.height*1.5,
+              padding: EdgeInsets.only(bottom: 15),
                   child: ListView(
+                    shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     children: [
                       InboxItem(),
@@ -178,17 +183,8 @@ class UserProfiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 110,
-      decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.blue,
-            width: 1.5
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(15))
-      ),
-      padding: EdgeInsets.all(5),
-      margin: EdgeInsets.symmetric(horizontal: 5),
-      child: Expanded(
+      margin: EdgeInsets.only(right: 4, left: 4, top: 8, bottom: 15),
+      child: ContainerCard(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
